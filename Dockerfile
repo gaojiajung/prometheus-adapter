@@ -1,7 +1,8 @@
-ARG GO_VERSION
+#ARG GO_VERSION
+#FROM golang:${GO_VERSION} as build
+ARG 1.18
 
-FROM golang:${GO_VERSION} as build
-
+FROM golang:1.18 as build
 WORKDIR /go/src/sigs.k8s.io/prometheus-adapter
 COPY go.mod .
 COPY go.sum .
